@@ -2,7 +2,7 @@
 #define LIB_GUI_H
 #include <GL/glut.h>
 #include "./mandelbrot.h"
-#define WINDOW_WIDTH 500
+#define WINDOW_WIDTH 750
 #define WINDOW_HEIGHT 500
 
 struct Color {
