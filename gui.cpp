@@ -50,11 +50,11 @@ void display(void)
             c = c + Complex(cursor_x * zoom_magn / HALF_WIDTH, cursor_y * zoom_magn / HALF_HEIGHT);
             c = c * (1 / zoom_magn);
 
-            int calculate_count = isInsideMandelbrot(c);
+            double calculate_count = isInsideMandelbrot(c);
             Color color;
-            color.r = static_cast<double>(static_cast<double>(calculate_count) / static_cast<double>(CALCULATE_COUNT_MAX));
-            color.g = static_cast<double>(static_cast<double>(calculate_count) / static_cast<double>(CALCULATE_COUNT_MAX));
-            color.b = static_cast<double>(static_cast<double>(calculate_count) / static_cast<double>(CALCULATE_COUNT_MAX));
+            color.r = static_cast<double>(static_cast<double>(calculate_count) / static_cast<double>(calculate_count_max));
+            color.g = static_cast<double>(static_cast<double>(calculate_count) / static_cast<double>(calculate_count_max));
+            color.b = static_cast<double>(static_cast<double>(calculate_count) / static_cast<double>(calculate_count_max));
             drawPoint(x, y, color);
         }
     }
@@ -73,13 +73,18 @@ void mouse(int button, int state, int x, int y)
                   << "cursor_y: " << cursor_y << std::endl;
         std::cout << "HALF_WIDTH: " << HALF_WIDTH << ","
                   << "HALF_HEIGHT: " << HALF_HEIGHT << std::endl;
+        
+        std::cout << "calculate_count_max: " << calculate_count_max << std::endl;
+
         if (button == 3)
         {
+            calculate_count_max = calculate_count_max + 0.5;
             zoom_magn = zoom_magn * 1.1;
             std::cout << "zoom_magn: " << zoom_magn << std::endl;
         }
         else
         {
+            calculate_count_max = calculate_count_max - 0.5;
             zoom_magn = zoom_magn * 0.9;
             std::cout << "zoom_magn: " << zoom_magn << std::endl;
         }

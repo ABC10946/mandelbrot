@@ -2,7 +2,7 @@
 #ifndef LIB_MANDELBROT_H_
 #define LIB_MANDELBROT_H_
 #include "./complex.h"
-#define CALCULATE_COUNT_MAX 20
+extern double calculate_count_max;
 
 Complex mandelbrotRecurrentRelation(Complex z, Complex c);
 int isInsideMandelbrot(Complex c);
