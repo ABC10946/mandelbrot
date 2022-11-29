@@ -10,6 +10,7 @@ int main(int argc, char *argv[]) {
     glutCreateWindow(argv[0]);
     glutDisplayFunc(display);
     glutReshapeFunc(reshape);
+    glutMouseFunc(mouse);
     glutMainLoop();
     return 0;
 }

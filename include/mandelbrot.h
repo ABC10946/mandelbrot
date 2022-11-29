@@ -7,4 +7,4 @@
 Complex mandelbrotRecurrentRelation(Complex z, Complex c);
 int isInsideMandelbrot(Complex c);
 
-#endif  // LIB_MANDELBROT_H_
+#endif // LIB_MANDELBROT_H_
